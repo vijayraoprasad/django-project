@@ -1,14 +1,14 @@
 #!/bin/bash
 
-cd django-project
+cd /home/ubuntu/django-project/djangoproject
 
-source my_env/bin/activate
+source /home/ubuntu/django-project/my_env/bin/activate
 
-cd djangoproject
-
-python manage.py collectstatic
+python manage.py makemigrations
 
 python manage.py migrate
+
+python manage.py collectstatic
 
 sudo systemctl restart gunicorn
 

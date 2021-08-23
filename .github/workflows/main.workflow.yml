@@ -47,15 +47,17 @@ jobs:
           REMOTE_HOST: "3.134.102.85"
           REMOTE_USER: "ubuntu"
           TARGET: "/home/ubuntu/django-project/djangoproject"
-        run: ./script.sh
 
-      
-#      - name: Run Shell script 
-#        run: |
-#          ssh -i ${{ secrets.EC2_SSH_KEY }} ubuntu@3.134.102.85
-#          pwd
-#          cd "/home/ubuntu/django-project/djangoproject"
-          
+      - name: Run Shell script 
+        uses: fifsky/ssh-action@master
+        with:
+          command: |
+            cd /home/ubuntu/django-project/djangoproject
+            bash script.sh
+          host: 3.134.102.85
+          user: ubuntu
+          key: ${{ secrets.EC2_SSH_KEY }}
+        
       - name: Remove Github Actions IP from security group
         run: |
          aws ec2 revoke-security-group-ingress --group-name ${{ env.AWS_SG_NAME }} --protocol tcp --port 22 --cidr ${{ steps.ip.outputs.ipv4 }}/32
