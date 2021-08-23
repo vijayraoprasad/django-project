@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Push-to-EC2
+name: Deploy Django Application
 
 # Controls when the workflow will run
 on:
