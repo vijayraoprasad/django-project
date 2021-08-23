@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /home/ubuntu/django-project/djangoproject
+cd /home/ubuntu/django-project/
 
 source /home/ubuntu/django-project/my_env/bin/activate
 
