@@ -47,13 +47,14 @@ jobs:
           REMOTE_HOST: "3.134.102.85"
           REMOTE_USER: "ubuntu"
           TARGET: "/home/ubuntu/django-project/djangoproject"
+        run: ./script.sh
+
       
-      - name: Run Shell script 
-        run: |
-          ssh -i ${{ secrets.EC2_SSH_KEY }} ubuntu@3.134.102.85
-          pwd
-          cd "/home/ubuntu/django-project/djangoproject"
-          ./script.sh
+#      - name: Run Shell script 
+#        run: |
+#          ssh -i ${{ secrets.EC2_SSH_KEY }} ubuntu@3.134.102.85
+#          pwd
+#          cd "/home/ubuntu/django-project/djangoproject"
           
       - name: Remove Github Actions IP from security group
         run: |
