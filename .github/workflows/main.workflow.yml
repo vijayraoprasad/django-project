@@ -44,7 +44,7 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
           SOURCE: "./"
-          REMOTE_HOST: "3.134.102.85"
+          REMOTE_HOST: "3.134.92.245"
           REMOTE_USER: "ubuntu"
           TARGET: "/home/ubuntu/django-project/djangoproject"
 
@@ -54,7 +54,7 @@ jobs:
           command: |
             cd /home/ubuntu/django-project/djangoproject
             bash script.sh
-          host: 3.134.102.85
+          host: 3.134.92.245
           user: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
         
