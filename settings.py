@@ -125,13 +125,12 @@ USE_TZ = True
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DATABASES = {
             'default': {
-                'ENGINE': 'django.db.backends.postgresql_psycopg2',
+                'ENGINE': 'django.db.backends.postgresql',
                 'NAME': 'django_prj',
                 'USER': 'vijayrao',
                 'PASSWORD': 'Cex12345',
                 'HOST': 'database-1.cvfelslddmj6.us-east-2.rds.amazonaws.com',
-                'PORT': '5432',
-                                                                    }
+                'PORT': '5432'                                      }
             }
 
 import os

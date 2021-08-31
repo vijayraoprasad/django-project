@@ -1,0 +1,7 @@
+version: '3'
+
+services: 
+  web:
+    build: .
+    command: /app/django-project/my_env/bin/gunicorn --workers 3 --user=root --group=root --bind unix:/app/django-project/djangoproject/app.sock djangoproject.wsgi:application --log-level=debug --log-file=-
+    
